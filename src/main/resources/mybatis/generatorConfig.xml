@@ -9,8 +9,10 @@
         <property name="xmlFormatter" value="org.mybatis.generator.api.dom.DefaultXmlFormatter"/>
 
         
-        <!--  nbj定制分页插件  -->
+        <!--  nbj定制插件：分页  -->
         <plugin type="nbj.maven.mybatis.generator.plugins.MBGLimitPlugin"/>
+        <!--  nbj定制插件：重命名WithBLOBs  -->
+        <plugin type="nbj.maven.mybatis.generator.plugins.MBGRenameBlobsPlugin"/>
         
         
         <!--  官方插件：equals && hashCode  -->
