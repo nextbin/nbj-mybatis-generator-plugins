@@ -11,15 +11,25 @@
         
         <!--  nbj定制插件：分页  -->
         <plugin type="nbj.maven.mybatis.generator.plugins.MBGLimitPlugin"/>
-        <!--  nbj定制插件：重命名WithBLOBs  -->
+        <!--  nbj定制插件：重命名查询方法的 WithBLOBs  -->
         <plugin type="nbj.maven.mybatis.generator.plugins.MBGRenameBlobsPlugin"/>
+        <!--  nbj定制插件：实体类追加注解  -->
+        <plugin type="nbj.maven.mybatis.generator.plugins.MBGDomainAnnotationPlugin">
+            <property name="@lombok.Data" value=""/>
+            <property name="@lombok.NoArgsConstructor" value=""/>
+            <property name="@lombok.AllArgsConstructor" value=""/>
+            <property name="@lombok.Builder" value=""/>
+            <property name="nbj.comment.gen" value="1"/>
+            <property name="nbj.comment.created" value="plugins"/>
+            <property name="nbj.comment.author" value="__user"/>
+        </plugin>
         
         
         <!--  官方插件：equals && hashCode  -->
         <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin">
             <property name="useEqualsHashCodeFromRoot" value="true"/>
         </plugin>
-        <!--  官方插件：with-builder -->
+        <!--  官方插件：实体类 with-builder -->
         <plugin type="org.mybatis.generator.plugins.FluentBuilderMethodsPlugin"/>
         
         
