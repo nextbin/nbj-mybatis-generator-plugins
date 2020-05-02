@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>github.nextbin.maven</groupId>
     <artifactId>nbj-mybatis-generator-plugins</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.2-SNAPSHOT</version>
     <name>MyBatis Generator Plugins</name>
     <scm>
         <connection>scm:git:https://github.com/nextbin/nbj-mybatis-generator-plugins</connection>
         <developerConnection>scm:git:https://github.com/nextbin/nbj-mybatis-generator-plugins</developerConnection>
-<!--        <url>http://somerepository.com/view.cvs</url>-->
+        <tag>HEAD</tag>
     </scm>
 
     <dependencies>
@@ -37,7 +36,7 @@
                     <dependency>
                         <groupId>github.nextbin.maven</groupId>
                         <artifactId>nbj-mybatis-generator-plugins</artifactId>
-                        <version>0.0.1-SNAPSHOT</version>
+                        <version>0.0.2-SNAPSHOT</version>
                     </dependency>
                     <dependency>
                         <groupId>mysql</groupId>
