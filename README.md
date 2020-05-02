@@ -26,7 +26,7 @@
 
    ```shell
    git clone https://github.com/nextbin/nbj-mybatis-generator-plugins.git
-   git checkot nbj-mybatis-generator-plugins-0.0.1
+   git checkot v0.0.1
    mvn clean install
    ```
 
