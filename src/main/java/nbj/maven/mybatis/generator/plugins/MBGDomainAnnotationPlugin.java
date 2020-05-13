@@ -1,9 +1,7 @@
 package nbj.maven.mybatis.generator.plugins;
 
-import nbj.maven.mybatis.generator.utils.JavaDocUtils;
 import org.mybatis.generator.api.IntrospectedTable;
 import org.mybatis.generator.api.PluginAdapter;
-import org.mybatis.generator.api.dom.java.Interface;
 import org.mybatis.generator.api.dom.java.TopLevelClass;
 
 import java.util.*;
@@ -54,7 +52,6 @@ public class MBGDomainAnnotationPlugin extends PluginAdapter {
             final String[] split = fullType.split("\\.");
             topLevelClass.addAnnotation("@" + split[split.length - 1]);
         }
-        JavaDocUtils.addClassCommonJavaDocLines(topLevelClass, this.properties);
         return true;
     }
 
@@ -67,19 +64,7 @@ public class MBGDomainAnnotationPlugin extends PluginAdapter {
             final String[] split = fullType.split("\\.");
             topLevelClass.addAnnotation("@" + split[split.length - 1]);
         }
-        JavaDocUtils.addClassCommonJavaDocLines(topLevelClass, this.properties);
         return true;
     }
 
-    @Override
-    public boolean modelExampleClassGenerated(final TopLevelClass topLevelClass, final IntrospectedTable introspectedTable) {
-        JavaDocUtils.addClassCommonJavaDocLines(topLevelClass, this.properties);
-        return true;
-    }
-
-    @Override
-    public boolean clientGenerated(final Interface interfaze, final IntrospectedTable introspectedTable) {
-        JavaDocUtils.addClassCommonJavaDocLines(interfaze, this.properties);
-        return true;
-    }
 }

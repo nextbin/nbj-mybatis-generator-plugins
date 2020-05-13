@@ -8,7 +8,12 @@
         <property name="javaFormatter" value="org.mybatis.generator.api.dom.DefaultJavaFormatter"/>
         <property name="xmlFormatter" value="org.mybatis.generator.api.dom.DefaultXmlFormatter"/>
 
-        
+
+        <!--  nbj定制插件：生成文件的头部注释  -->
+        <plugin type="nbj.maven.mybatis.generator.plugins.CommentPlugin">
+            <property name="nbj.comment.created" value="__plugins"/>
+            <property name="nbj.comment.author" value="__user"/>
+        </plugin>
         <!--  nbj定制插件：分页  -->
         <plugin type="nbj.maven.mybatis.generator.plugins.MBGLimitPlugin"/>
         <!--  nbj定制插件：重命名查询方法的 WithBLOBs  -->
@@ -19,9 +24,6 @@
             <property name="@lombok.NoArgsConstructor" value=""/>
             <property name="@lombok.AllArgsConstructor" value=""/>
             <property name="@lombok.Builder" value=""/>
-            <property name="nbj.comment.gen" value="1"/>
-            <property name="nbj.comment.created" value="plugins"/>
-            <property name="nbj.comment.author" value="__user"/>
         </plugin>
         
         

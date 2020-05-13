@@ -14,14 +14,12 @@ public final class PropertiesUtils {
     private PropertiesUtils() {}
 
     public static Map<String, String> parsePropertiesToMap(final Properties properties) {
-        final Map<String, String> mbgProperties = new HashMap<>();
+        final Map<String, String> ret = new HashMap<>();
         for (final Map.Entry<Object, Object> entry : properties.entrySet()) {
             final String key = (String) entry.getKey();
             final String value = (String) entry.getValue();
-            if (MBGConst.PLUGINS_PROPERTIES.contains(key)) {
-                mbgProperties.put(key, value);
-            }
+            ret.put(key, value);
         }
-        return mbgProperties;
+        return ret;
     }
 }
