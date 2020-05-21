@@ -19,6 +19,8 @@
 1. **分页功能**：nbj.maven.mybatis.generator.plugins.MBGLimitPlugin。官方插件有弊端，为查全表再分页，完全没用到 limit 关键字，不适用表数据量大的应用。
 2. **重命名WithBlobs方法**：nbj.maven.mybatis.generator.plugins.MBGRenameBlobsPlugin。为了减少使用WithoutBlobs和WithBlobs两种实体类，如 User和UserWithBlobs之间的操作出错可能，将WithBlobs相关方法名（实体类可以通过设置defaultModelType="flat"来合并）进行重命名。
 3. **实体类增加无参注解**：nbj.maven.mybatis.generator.plugins.MBGDomainAnnotationPlugin。为了减少人工手动手动追加注解的麻烦，拓展该功能。如追加 @lombok.Data @lombok.NoArgsConstructor @lombok.AllArgsConstructor @lombok.Builder
+4. **实体类增加Thrift With Swift相关注解**：nbj.maven.mybatis.generator.plugins.ThriftWithSwiftPlugin
+5. **生成文件注释**：nbj.maven.mybatis.generator.plugins.ThriftWithSwiftPlugin
 
 ## 使用方法（Quick Start）
 
@@ -26,7 +28,7 @@
 
    ```shell
    git clone https://github.com/nextbin/nbj-mybatis-generator-plugins.git
-   git checkot v0.0.1
+   git checkot v0.0.2
    mvn clean install
    ```
 
@@ -48,7 +50,7 @@
           <dependency>
             <groupId>github.nextbin.maven</groupId>
             <artifactId>nbj-mybatis-generator-plugins</artifactId>
-            <version>0.0.1</version>
+            <version>0.0.2</version>
           </dependency>
           <dependency>
             <groupId>mysql</groupId>
@@ -61,7 +63,7 @@
   </build>
   ```
 
-2. 新增 src/main/resources/mybatis/generatorConfig.xml，如已配置，则需新增拓展插件。
+3. 新增 src/main/resources/mybatis/generatorConfig.xml，如已配置，则需新增拓展插件。
 
    ```xml
    <!DOCTYPE generatorConfiguration PUBLIC
@@ -74,20 +76,23 @@
        <property name="javaFormatter" value="org.mybatis.generator.api.dom.DefaultJavaFormatter"/>
        <property name="xmlFormatter" value="org.mybatis.generator.api.dom.DefaultXmlFormatter"/>
    
-       
+       <!--  nbj定制插件：生成 ThriftSwift 相关内容  -->
+       <plugin type="nbj.maven.mybatis.generator.plugins.ThriftWithSwiftPlugin"/>
+       <!--  nbj定制插件：生成文件的头部注释  -->
+       <plugin type="nbj.maven.mybatis.generator.plugins.CommentPlugin">
+           <property name="nbj.comment.created" value="__plugins"/>
+           <property name="nbj.comment.author" value="__user"/>
+       </plugin>
        <!--  nbj定制插件：分页  -->
        <plugin type="nbj.maven.mybatis.generator.plugins.MBGLimitPlugin"/>
        <!--  nbj定制插件：重命名查询方法的 WithBLOBs  -->
        <plugin type="nbj.maven.mybatis.generator.plugins.MBGRenameBlobsPlugin"/>
        <!--  nbj定制插件：实体类追加注解  -->
        <plugin type="nbj.maven.mybatis.generator.plugins.MBGDomainAnnotationPlugin">
-         <property name="@lombok.Data" value=""/>
-         <property name="@lombok.NoArgsConstructor" value=""/>
-         <property name="@lombok.AllArgsConstructor" value=""/>
-         <property name="@lombok.Builder" value=""/>
-         <property name="nbj.comment.gen" value="1"/>
-         <property name="nbj.comment.created" value="plugins"/>
-         <property name="nbj.comment.author" value="__user"/>
+           <property name="@lombok.Data" value=""/>
+           <property name="@lombok.NoArgsConstructor" value=""/>
+           <property name="@lombok.AllArgsConstructor" value=""/>
+           <property name="@lombok.Builder" value=""/>
        </plugin>
        
        
@@ -140,23 +145,23 @@
 
    检查是否已完成本地手动安装，见使用方法1.安装依赖
 
-## 迭代计划
-
-v0.0.2
-
-1. 新增 MBGThriftPlugin：实体类新增 thrift 相关注解
+## 版本计划
 
 v0.1.x
 
 1. 发布到公共仓库，无需手动安装
 
-## 迭代记录
+## 版本变更（Release Notes）
 
 v0.0.1
 
 1. 新增分页功能：nbj.maven.mybatis.generator.plugins.MBGLimitPlugin
 2. 新增重命名WithBlobs方法：nbj.maven.mybatis.generator.plugins.MBGRenameBlobsPlugin
 3. 新增实体类增加无参注解：nbj.maven.mybatis.generator.plugins.MBGDomainAnnotationPlugin
+
+v0.0.2
+
+1. 新增 ThriftWithSwiftPlugin：实体类新增 thrift with swift 相关注解
 
 ## 其他
 
