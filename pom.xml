@@ -14,7 +14,16 @@
         <developerConnection>scm:git:https://github.com/nextbin/nbj-mybatis-generator-plugins</developerConnection>
         <tag>HEAD</tag>
     </scm>
-    
+
+    <licenses>
+        <license>
+            <name>Apache 2</name>
+            <url>http://www.baidu.com/banseon/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+            <comments>A business-friendly OSS license</comments>
+        </license>
+    </licenses>
+
     <developers>
         <developer>
             <id>nextbin</id>
