@@ -4,7 +4,7 @@
 
     <groupId>io.github.nextbin</groupId>
     <artifactId>nbj-mybatis-generator-plugins</artifactId>
-    <version>0.0.6</version>
+    <version>0.0.7-SNAPSHOT</version>
     <name>MyBatis Generator Plugins</name>
     <description>plugins for mybatis-generator-maven-plugin</description>
     <url>https://github.com/nextbin/nbj-mybatis-generator-plugins</url>
@@ -12,7 +12,7 @@
     <scm>
         <connection>scm:git:https://github.com/nextbin/nbj-mybatis-generator-plugins</connection>
         <developerConnection>scm:git:https://github.com/nextbin/nbj-mybatis-generator-plugins</developerConnection>
-        <tag>v0.0.6</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <licenses>
@@ -54,7 +54,7 @@
                     <dependency>
                         <groupId>io.github.nextbin</groupId>
                         <artifactId>nbj-mybatis-generator-plugins</artifactId>
-                        <version>0.0.6</version>
+                        <version>0.0.7-SNAPSHOT</version>
                     </dependency>
                     <dependency>
                         <groupId>mysql</groupId>
